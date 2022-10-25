@@ -76,18 +76,18 @@ https://templatemo.com/tm-560-astro-motion
                         .then(function (response) {
                             return response.json();
                         })
-                        .then(function (data) {
-                            appendData(data);
+                        .then(function (postBody) {
+                            appendData(postBody);
                         })
                         .catch(function (err) {
                             console.log('error: ' + err);
                         });
 
-                    function appendData(data) {
+                    function appendData(postBody) {
                         let mainContainer = document.getElementById("myData");
-                        for (let i = 0; i < data.length; i++) {
+                        for (let i = 0; i < postBody.length; i++) {
                             let div = document.createElement("div");
-                            div.innerHTML = 'Name: ' + data[i].firstName + ' ' + data[i].lastName;
+                            div.innerHTML = 'Name: ' + postBody[i].firstName + ' ' + postBody[i].lastName;
                             mainContainer.appendChild(div);
                         }
                     }
