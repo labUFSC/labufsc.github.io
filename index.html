@@ -6,22 +6,22 @@
 </head>
 <body>
                 <script type="text/javascript">
-                    fetch('postBody.json')
+                    fetch('application.json')
                         .then(function (response) {
                             return response.json();
                         })
-                        .then(function (postBody) {
+                        .then(function (application) {
                             appendData(postBody);
                         })
                         .catch(function (err) {
                             console.log('error: ' + err);
                         });
 
-                    function appendData(postBody) {
+                    function appendData(application) {
                         let mainContainer = document.getElementById("myData");
                         for (let i = 0; i < postBody.length; i++) {
                             let div = document.createElement("div");
-                            div.innerHTML = 'Name: ' + postBody[i].firstName + ' ' + postBody[i].lastName;
+                            div.innerHTML = 'Name: ' + application[i].firstName + ' ' + application[i].lastName;
                             mainContainer.appendChild(div);
                         }
                     }
