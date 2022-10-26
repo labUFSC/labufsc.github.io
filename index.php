@@ -6,7 +6,6 @@
 </head>
 <body>
 
-echo "
 <?php
  
 $people_json = file_get_contents('people.json');
@@ -22,7 +21,7 @@ echo $decoded_json->email;
 echo $decoded_json->age;
 // 77
  
-?>";
+?>
 
 <h1>My First Heading</h1>
 <p>My first paragraph.</p>
